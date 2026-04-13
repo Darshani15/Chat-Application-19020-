@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+</head>
+
+<body style="background:#0f0f0f; color:white; font-family:Arial;">
+
+<div style="width:320px; margin:100px auto; background:#1a1a1a; padding:20px; border-radius:10px;">
+
+    <h2 style="text-align:center;">Create Account</h2>
+
+    {% if error %}
+        <p style="color:red; text-align:center;">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <input name="username" placeholder="Username"
+               style="width:100%;padding:10px;margin:10px 0;"><br>
+
+        <input name="password" type="password" placeholder="Password"
+               style="width:100%;padding:10px;margin:10px 0;"><br>
+
+        <button style="width:100%;padding:10px;background:#10a37f;color:white;">
+            Register
+        </button>
+    </form>
+
+    <p style="text-align:center;margin-top:10px;">
+        Already have account?
+        <a href="/login/" style="color:#10a37f;">Login</a>
+    </p>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - SmartChat</title>
+</head>
+
+<body style="margin:0; background:#0f0f0f; color:white; font-family:Arial;">
+
+<div style="display:flex; justify-content:center; align-items:center; height:100vh;">
+
+    <div style="width:350px; background:#1a1a1a; padding:25px; border-radius:12px;">
+
+        <h2 style="text-align:center; margin-bottom:20px;">SmartChat Login</h2>
+
+        <!-- ERROR MESSAGE -->
+        {% if error %}
+            <p style="color:red; text-align:center;">{{ error }}</p>
+        {% endif %}
+
+        <!-- LOGIN FORM -->
+        <form method="POST">
+            {% csrf_token %}
+
+            <input name="username"
+                   placeholder="Username"
+                   required
+                   style="width:100%;padding:12px;margin-bottom:12px;border:none;border-radius:6px;"><br>
+
+            <input name="password"
+                   type="password"
+                   placeholder="Password"
+                   required
+                   style="width:100%;padding:12px;margin-bottom:15px;border:none;border-radius:6px;"><br>
+
+            <button type="submit"
+                    style="width:100%;padding:12px;background:#10a37f;color:white;border:none;border-radius:6px;cursor:pointer;">
+                Login
+            </button>
+        </form>
+
+        <p style="text-align:center;margin-top:15px;">
+            Don't have an account?
+            <a href="/register/" style="color:#10a37f;">Register</a>
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>
